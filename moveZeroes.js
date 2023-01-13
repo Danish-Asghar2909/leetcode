@@ -2,6 +2,8 @@
 
 // Note that you must do this in-place without making a copy of the array.
 
+// array.push(array.splice(array.indexOf(element), 1)[0]);
+
 
 var moveZeroes = function(nums) {
     let arrOnlyContainZero = []
