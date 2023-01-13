@@ -6,17 +6,12 @@
 
 
 var moveZeroes = function(nums) {
-    let arrOnlyContainZero = []
-    let arrWithoutZero = []
     for(let i = 0 ; i < nums.length ;i++){
         if(nums[i]===0){
-            arrOnlyContainZero.push(nums[i])
-        }else{
-            arrWithoutZero.push(nums[i])
+            nums.push(nums.splice(nums.indexOf(nums[i]), 1)[0]);
         }
     }
-    //console.log("sample : ", nums , arrOnlyContainZero , arrWithoutZero )
-    return [...arrWithoutZero , ...arrOnlyContainZero]
+    return nums
 };
 
 const nums = [0,1,0,3,12]
