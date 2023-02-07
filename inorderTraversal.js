@@ -11,10 +11,8 @@
  * @return {number[]}
  */
 var inorderTraversal = function(root) {
-    console.log(root)
-    const current = root
-    const stack = []
-    
+    if(!root) return []
+    return [...inorderTraversal(root.left) , root.val , ...inorderTraversal(root.right)]    
 };
 
 const inputTree = {
