@@ -68,6 +68,7 @@ const titleToNumber = (columnTitle) => {
     return corresponding_number;
   };
 
+
 const input = 'Z'
-const output = titleToNumber(input)
+const output = practise(input)
 console.log("Output : ", output)
