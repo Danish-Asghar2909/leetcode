@@ -11,29 +11,35 @@
  * @param {string} digits
  * @return {string[]}
  */
-const L = {'2':"abc",'3':"def",'4':"ghi",'5':"jkl",
-     '6':"mno",'7':"pqrs",'8':"tuv",'9':"wxyz"}
-
-var letterCombinations = function(digits) {
-    if(digits.length === 0) return []
-    let answer = []
-    let strLength = digits.length
-
-    const depthFirstSearch = (position , str) =>{
-        if(position === strLength ) answer.push(str)
-        else{
-            let letters = L[digits[position]]
-            for(let i = 0 ; i < letters.length ; i++){
-                depthFirstSearch(position + 1 , str + letters[i])
-            }
-        }
-    }
-    depthFirstSearch(0,"")
-    return answer
+const L = {
+  2: "abc",
+  3: "def",
+  4: "ghi",
+  5: "jkl",
+  6: "mno",
+  7: "pqrs",
+  8: "tuv",
+  9: "wxyz",
 };
 
+var letterCombinations = function (digits) {
+  if (digits.length === 0) return [];
+  let answer = [];
+  let strLength = digits.length;
 
+  const depthFirstSearch = (position, str) => {
+    if (position === strLength) answer.push(str);
+    else {
+      let letters = L[digits[position]];
+      for (let i = 0; i < letters.length; i++) {
+        depthFirstSearch(position + 1, str + letters[i]);
+      }
+    }
+  };
+  depthFirstSearch(0, "");
+  return answer;
+};
 
-const input = "23"
-const output = letterCombinations(input)
-console.log("Output : ", output)
+const input = "23";
+const output = letterCombinations(input);
+console.log("Output : ", output);
