@@ -39,20 +39,31 @@
  * @return {number}
  */
 var removeDuplicates = function(nums) {
-    console.log("Nums : ", nums)
-    if(nums.length === 0 ){
-        return 0
-    }
-    const uniqueArr = {}
-    for(const num of nums){
-        if(uniqueArr[num]){
-            uniqueArr[num].push(num)
-        }else{
-            uniqueArr[num] = [num]
+    // console.log("Nums : ", nums)
+    // if(nums.length === 0 ){
+    //     return 0
+    // }
+    // const uniqueArr = {}
+    // for(const num of nums){
+    //     if(uniqueArr[num]){
+    //         uniqueArr[num].push(num)
+    //     }else{
+    //         uniqueArr[num] = [num]
+    //     }
+    // }
+    // console.log("Uniquue array : ", uniqueArr)
+    // return Object.keys(uniqueArr)
+    if (nums.length === 0) return 0; 
+    let uniqueIndex = 0; 
+    
+    for (let i = 1; i < nums.length; i++) {
+        if (nums[i] !== nums[uniqueIndex]) {
+            uniqueIndex++;
+            nums[uniqueIndex] = nums[i];
         }
     }
-    console.log("Uniquue array : ", uniqueArr)
-    return Object.keys(uniqueArr)
+    console.log("unique index : ", uniqueIndex + 1)
+    return uniqueIndex + 1;
 };
 
 const input = [0,0,1,1,1,2,2,3,3,4]
